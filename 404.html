@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — My World</title>
+  <meta name="description" content="The page you're looking for doesn't exist." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream: #faf7f2; --deep: #2a1f1a;
+      --gold: #c9a96e; --rose: #d4897a; --soft: #7a5a4a;
+    }
+    @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    body {
+      background: var(--deep);
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      text-align: center;
+      padding: 40px 24px;
+    }
+    .wrap { animation: fadeUp 0.8s 0.2s both; }
+    .num {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(100px, 20vw, 180px);
+      color: rgba(201,169,110,0.12);
+      line-height: 1;
+      margin-bottom: -20px;
+    }
+    .icon {
+      font-size: 56px;
+      display: block;
+      animation: floatY 4s ease-in-out infinite;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 5vw, 40px);
+      color: var(--cream);
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+    p {
+      font-size: 15px; line-height: 1.8;
+      color: rgba(250,247,242,0.5);
+      max-width: 400px; margin: 0 auto 40px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border: 1px solid rgba(201,169,110,0.5);
+      border-radius: 100px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+    .btn:hover {
+      background: var(--gold);
+      color: var(--deep);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="num">404</div>
+    <span class="icon">🌻</span>
+    <h1>Lost in the journey</h1>
+    <p>The page you're looking for seems to have wandered off the trail. Let's find our way back together.</p>
+    <a href="index.html" class="btn">Back to My World</a>
+  </div>
+</body>
+</html>
