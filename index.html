@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My World — A Personal Story | Nepal to New York</title>
+  <meta name="description" content="A personal journal — from the vibrant streets of Nepal to New York City. Stories of roots, love, adventure, nature, and culture." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://shreekk1.github.io/Vlog-/" />
+  <meta property="og:title" content="My World — A Personal Story" />
+  <meta property="og:description" content="From Nepal to New York — a life lived in colour, love and curiosity." />
+  <meta property="og:type" content="website" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>✦</text></svg>" />
+
+  <style>
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── LIGHT THEME ── */
+    [data-theme="light"] {
+      --bg:          #f7f3ee;
+      --bg-alt:      #eee9e1;
+      --bg-card:     #ffffff;
+      --bg-dark:     #1c1612;
+      --bg-dark2:    #241e17;
+      --txt:         #1c1612;
+      --txt-2:       #5a4535;
+      --txt-3:       #8c7060;
+      --txt-inv:     #f7f3ee;
+      --txt-inv2:    rgba(247,243,238,0.58);
+      --sage:        #5a8a5e;
+      --sage-l:      #8ab88e;
+      --sage-bg:     rgba(90,138,94,0.1);
+      --amber:       #c07828;
+      --amber-l:     #d99848;
+      --amber-bg:    rgba(192,120,40,0.1);
+      --rose:        #b85c52;
+      --rose-l:      #cf8880;
+      --rose-bg:     rgba(184,92,82,0.1);
+      --sky:         #4a8aa8;
+      --sky-bg:      rgba(74,138,168,0.1);
+      --border:      rgba(90,70,50,0.12);
+      --sh-sm:       0 2px 12px rgba(28,22,18,0.08);
+      --sh-md:       0 8px 32px rgba(28,22,18,0.12);
+      --sh-lg:       0 20px 60px rgba(28,22,18,0.18);
+      --nav-bg:      rgba(28,22,18,0.94);
+    }
+
+    /* ── DARK THEME ── */
+    [data-theme="dark"] {
+      --bg:          #131009;
+      --bg-alt:      #1a1710;
+      --bg-card:     #211e16;
+      --bg-dark:     #0d0b07;
+      --bg-dark2:    #161310;
+      --txt:         #ece6da;
+      --txt-2:       #a89070;
+      --txt-3:       #6a5840;
+      --txt-inv:     #ece6da;
+      --txt-inv2:    rgba(236,230,218,0.55);
+      --sage:        #72a876;
+      --sage-l:      #9ac89e;
+      --sage-bg:     rgba(114,168,118,0.1);
+      --amber:       #d09040;
+      --amber-l:     #e0b060;
+      --amber-bg:    rgba(208,144,64,0.1);
+      --rose:        #c87068;
+      --rose-l:      #dea098;
+      --rose-bg:     rgba(200,112,104,0.1);
+      --sky:         #6aaccc;
+      --sky-bg:      rgba(106,172,204,0.1);
+      --border:      rgba(200,180,140,0.1);
+      --sh-sm:       0 2px 12px rgba(0,0,0,0.35);
+      --sh-md:       0 8px 32px rgba(0,0,0,0.45);
+      --sh-lg:       0 20px 60px rgba(0,0,0,0.65);
+      --nav-bg:      rgba(8,6,4,0.96);
+    }
+
+    /* ── BASE ── */
+    :root { --nav-h: 68px; --ease: cubic-bezier(0.22,1,0.36,1); }
+
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: var(--bg); color: var(--txt);
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden; line-height: 1.65;
+      transition: background .4s, color .4s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 3px; }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 16px;
+      background: var(--bg-dark); color: var(--txt-inv);
+      padding: 10px 20px; border-radius: 0 0 6px 6px;
+      font-size: 14px; z-index: 9999; text-decoration: none; transition: top .2s;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp   { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:none} }
+    @keyframes fadeIn   { from{opacity:0} to{opacity:1} }
+    @keyframes growLine { from{transform:scaleX(0)} to{transform:scaleX(1)} }
+    @keyframes floatY   { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    @keyframes slidDown { from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:none} }
+    @keyframes pop      { 0%{transform:scale(.8)} 60%{transform:scale(1.12)} 100%{transform:scale(1)} }
+
+    .reveal {
+      opacity:0; transform:translateY(22px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+    .reveal.in { opacity:1; transform:none; }
+    .d1 { transition-delay:.1s; }
+    .d2 { transition-delay:.2s; }
+    .d3 { transition-delay:.3s; }
+
+    /* ── NAV ── */
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:200;
+      height:var(--nav-h);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:0 52px;
+      background:var(--nav-bg);
+      backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+      transition:background .4s, box-shadow .3s;
+    }
+    nav.scrolled { box-shadow:0 4px 40px rgba(0,0,0,0.28); }
+
+    .nav-logo {
+      font-family:'Cormorant Garamond',serif;
+      font-size:22px; font-weight:400;
+      color:var(--txt-inv); text-decoration:none; letter-spacing:.02em;
+    }
+    .nav-logo span { color:var(--rose-l); font-style:italic; }
+
+    /* centered links */
+    .nav-mid {
+      position:absolute; left:50%; transform:translateX(-50%);
+    }
+    .nav-links { display:flex; gap:30px; list-style:none; }
+    .nav-links a {
+      font-size:10.5px; letter-spacing:2.5px; text-transform:uppercase;
+      color:rgba(240,235,225,.55); text-decoration:none;
+      position:relative; padding:4px 0;
+      transition:color .25s;
+    }
+    .nav-links a::after {
+      content:''; position:absolute; bottom:-2px; left:0; right:0;
+      height:1px; background:var(--amber-l);
+      transform:scaleX(0); transform-origin:left;
+      transition:transform .3s var(--ease);
+    }
+    .nav-links a:hover { color:var(--amber-l); }
+    .nav-links a:hover::after, .nav-links a.active::after { transform:scaleX(1); }
+    .nav-links a.active { color:var(--amber-l); }
+
+    /* right controls */
+    .nav-right { display:flex; align-items:center; gap:12px; }
+
+    .theme-btn {
+      width:38px; height:38px; border-radius:50%;
+      border:1px solid rgba(255,255,255,0.13);
+      background:rgba(255,255,255,0.06);
+      cursor:pointer; font-size:16px;
+      display:flex; align-items:center; justify-content:center;
+      transition:background .25s, transform .25s;
+      flex-shrink:0;
+    }
+    .theme-btn:hover { background:rgba(255,255,255,0.14); transform:rotate(15deg) scale(1.08); }
+    .theme-btn.pop  { animation:pop .35s var(--ease); }
+
+    .burger {
+      display:none; background:none;
+      border:1px solid rgba(240,235,225,.2);
+      border-radius:5px; padding:8px 9px;
+      cursor:pointer; flex-direction:column; gap:5px;
+    }
+    .burger span {
+      display:block; width:20px; height:2px;
+      background:var(--txt-inv); border-radius:2px;
+      transition:transform .3s, opacity .3s;
+    }
+    .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+    .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    /* drawer */
+    .drawer {
+      position:fixed; top:var(--nav-h); left:0; right:0; z-index:199;
+      background:rgba(12,9,6,.97); backdrop-filter:blur(20px);
+      padding:18px 26px 26px;
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+    .drawer[hidden]{display:none}
+    .drawer.open{display:flex;flex-direction:column;gap:2px;animation:slidDown .25s var(--ease)}
+    .drawer a {
+      display:block; padding:13px 0;
+      font-size:13px; letter-spacing:2.5px; text-transform:uppercase;
+      color:rgba(240,235,225,.65); text-decoration:none;
+      border-bottom:1px solid rgba(255,255,255,.05);
+      transition:color .2s, padding-left .2s;
+    }
+    .drawer a:last-child{border-bottom:none}
+    .drawer a:hover { color:var(--amber-l); padding-left:8px; }
+
+    /* ── HERO ── */
+    .hero {
+      display:grid; grid-template-columns:1fr 1fr;
+      min-height:100vh; padding-top:var(--nav-h); overflow:hidden;
+    }
+    .hero-l {
+      background:var(--bg-dark);
+      display:flex; flex-direction:column; justify-content:center;
+      padding:80px 60px; position:relative; z-index:2;
+    }
+    .hero-l::after {
+      content:''; position:absolute; right:-40px; top:0;
+      width:82px; height:100%;
+      background:var(--bg-dark);
+      clip-path:polygon(0 0,0 100%,100% 100%);
+      z-index:3;
+    }
+    .eyebrow {
+      font-size:10px; letter-spacing:4px; text-transform:uppercase;
+      color:var(--sage); margin-bottom:20px;
+      opacity:0; animation:fadeUp .8s .2s forwards;
+    }
+    .hero-h1 {
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(40px,4.6vw,68px); font-weight:300; line-height:1.05;
+      color:var(--txt-inv); margin-bottom:22px;
+      opacity:0; animation:fadeUp .8s .4s forwards;
+    }
+    .hero-h1 em  { color:var(--rose-l);  font-style:italic; }
+    .hero-h1 b   { color:var(--amber-l); font-weight:600; font-style:normal; }
+    .hero-sub {
+      font-size:15px; line-height:1.85; font-weight:300;
+      color:var(--txt-inv2); max-width:370px;
+      opacity:0; animation:fadeUp .8s .6s forwards;
+    }
+    .hero-tags {
+      display:flex; flex-wrap:wrap; gap:9px; margin-top:36px;
+      opacity:0; animation:fadeUp .8s .8s forwards;
+    }
+    .tag {
+      font-size:11px; padding:6px 14px;
+      border:1px solid rgba(90,138,94,.35); border-radius:100px;
+      color:var(--sage); letter-spacing:.5px;
+      transition:background .25s, border-color .25s;
+    }
+    .tag:hover { background:var(--sage-bg); border-color:var(--sage); }
+
+    .hero-r { position:relative; overflow:hidden; }
+    .hero-r img {
+      width:100%; height:100%;
+      object-fit:cover; object-position:center top;
+      animation:fadeIn 1.4s .3s both;
+      display:block;
+    }
+    .hero-r::after {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(130deg,rgba(14,10,6,.28) 0%,transparent 55%);
+    }
+    .scroll-hint {
+      position:absolute; bottom:38px; left:60px; z-index:10;
+      display:flex; align-items:center; gap:13px;
+      font-size:10px; letter-spacing:3px; text-transform:uppercase;
+      color:var(--sage);
+      opacity:0; animation:fadeUp .8s 1.2s forwards;
+    }
+    .scroll-line {
+      width:38px; height:1px; background:var(--sage);
+      animation:growLine 1.5s 1.8s both; transform-origin:left;
+    }
+
+    /* ── SHARED ── */
+    .lbl {
+      font-size:10px; letter-spacing:5px; text-transform:uppercase;
+      color:var(--amber); margin-bottom:13px;
+      display:flex; align-items:center; gap:13px;
+    }
+    .lbl::after { content:''; height:1px; width:34px; background:var(--amber); opacity:.4; }
+
+    .sec-h {
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(28px,3.8vw,50px); font-weight:300; line-height:1.12;
+      color:var(--txt); margin-bottom:18px;
+      transition:color .4s;
+    }
+    .sec-h em { color:var(--amber); font-style:italic; }
+
+    .sec-p {
+      font-size:15.5px; line-height:1.85; font-weight:300;
+      color:var(--txt-2); max-width:580px;
+      transition:color .4s;
+    }
+
+    /* ── CH1 ROOTS ── */
+    .ch-roots {
+      background:var(--bg-dark); padding:110px 56px;
+      position:relative; overflow:hidden;
+    }
+    [data-theme="dark"] .ch-roots { background:var(--bg-dark2); }
+    .ch-roots::before {
+      content:'NEPAL'; position:absolute; right:-20px; top:50%;
+      transform:translateY(-50%) rotate(90deg);
+      font-family:'Cormorant Garamond',serif;
+      font-size:140px; color:rgba(90,138,94,.05);
+      letter-spacing:20px; pointer-events:none; user-select:none; white-space:nowrap;
+    }
+    .roots-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+
+    .roots-grid .lbl        { color:var(--sage); }
+    .roots-grid .lbl::after { background:var(--sage); }
+    .roots-grid .sec-h      { color:var(--txt-inv); }
+    .roots-grid .sec-h em   { color:var(--sage-l); }
+    .roots-grid .sec-p      { color:var(--txt-inv2); max-width:100%; }
+
+    .quote-box {
+      margin-top:36px; padding:24px 28px;
+      border-left:2px solid var(--sage);
+      background:var(--sage-bg); border-radius:0 8px 8px 0;
+    }
+    .quote-box blockquote {
+      font-family:'Cormorant Garamond',serif;
+      font-style:italic; font-size:16px; line-height:1.8; color:var(--sage-l);
+    }
+    .quote-box cite {
+      display:block; margin-top:10px;
+      font-size:10px; letter-spacing:2px;
+      color:rgba(138,184,142,.4); font-style:normal;
+    }
+
+    .photo-stack { position:relative; height:520px; }
+    .stack-main {
+      position:absolute; top:0; left:0;
+      width:82%; height:440px;
+      object-fit:cover; object-position:center top;
+      border-radius:6px;
+      box-shadow:18px 18px 55px rgba(0,0,0,.6);
+      transform:rotate(-2deg); display:block;
+    }
+    .stack-badge {
+      position:absolute; bottom:20px; right:0;
+      width:152px; height:152px;
+      background:linear-gradient(135deg,var(--sage) 0%,#3a6040 100%);
+      border-radius:50%;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      animation:floatY 4s ease-in-out infinite; user-select:none;
+    }
+    .stack-badge p { font-family:'Cormorant Garamond',serif; font-size:12px; color:#fff; text-align:center; line-height:1.5; }
+    .stack-badge span { display:block; font-size:26px; font-weight:600; }
+
+    /* ── CH2 LOVE ── */
+    .ch-love { background:var(--bg-alt); padding:110px 56px; transition:background .4s; }
+    .love-intro { text-align:center; max-width:660px; margin:0 auto 68px; }
+    .love-intro .lbl { justify-content:center; }
+    .love-intro .lbl::after { display:none; }
+    .love-intro .sec-p { margin:0 auto; }
+
+    .mosaic-love {
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr;
+      grid-template-rows:300px 260px;
+      gap:11px;
+    }
+    .card { position:relative; overflow:hidden; border-radius:6px; }
+    .card img {
+      width:100%; height:100%; object-fit:cover; object-position:top;
+      transition:transform .65s var(--ease); display:block;
+    }
+    .card:hover img { transform:scale(1.05); }
+    .card-ov {
+      position:absolute; inset:0;
+      background:linear-gradient(to top,rgba(10,7,4,.78) 0%,transparent 50%);
+      opacity:0; transition:opacity .4s;
+      display:flex; align-items:flex-end; padding:15px;
+    }
+    .card:hover .card-ov { opacity:1; }
+    .card-cap { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(240,235,225,.9); }
+    .tall { grid-row:span 2; }
+
+    .love-q { text-align:center; padding:68px 36px 0; }
+    .love-q blockquote {
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(19px,2.4vw,29px); font-style:italic; font-weight:300; line-height:1.5;
+      color:var(--txt); max-width:660px; margin:0 auto; transition:color .4s;
+    }
+    .love-q cite {
+      display:block; margin-top:16px;
+      font-size:10px; letter-spacing:3px; text-transform:uppercase;
+      color:var(--rose); font-style:normal;
+    }
+
+    /* ── CH3 NYC ── */
+    .ch-nyc { background:var(--bg-dark); padding:110px 56px; position:relative; overflow:hidden; }
+    [data-theme="dark"] .ch-nyc { background:var(--bg-dark2); }
+    .ch-nyc::after {
+      content:'NEW YORK'; position:absolute; bottom:-28px; left:-8px;
+      font-family:'Cormorant Garamond',serif; font-size:120px;
+      color:rgba(255,255,255,.025); letter-spacing:10px;
+      pointer-events:none; user-select:none; white-space:nowrap;
+    }
+    .nyc-top { display:grid; grid-template-columns:1fr 1fr; gap:76px; margin-bottom:58px; align-items:center; }
+    .nyc-top .lbl        { color:var(--sky); }
+    .nyc-top .lbl::after { background:var(--sky); }
+    .nyc-top .sec-h      { color:var(--txt-inv); }
+    .nyc-top .sec-h em   { color:var(--sky); }
+    .nyc-top .sec-p      { color:var(--txt-inv2); max-width:100%; }
+
+    .stats { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .stat {
+      padding:20px 22px;
+      border:1px solid rgba(74,138,168,.18); border-radius:8px;
+      background:rgba(74,138,168,.05);
+      transition:background .3s, border-color .3s, transform .3s;
+    }
+    .stat:hover { background:rgba(74,138,168,.1); border-color:rgba(74,138,168,.3); transform:translateY(-2px); }
+    .stat-n { font-family:'Cormorant Garamond',serif; font-size:32px; color:var(--sky); line-height:1; margin-bottom:7px; }
+    .stat-l { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(240,235,225,.35); }
+
+    .mosaic-nyc { display:grid; grid-template-columns:1.5fr 1fr 1fr; grid-template-rows:285px 285px; gap:10px; }
+    .tile { position:relative; overflow:hidden; border-radius:6px; }
+    .tile img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .65s var(--ease); display:block; }
+    .tile:hover img { transform:scale(1.05); }
+    .tile-span { grid-row:span 2; }
+    .tile-lbl {
+      position:absolute; bottom:11px; left:11px;
+      font-size:10px; letter-spacing:2px; text-transform:uppercase;
+      color:rgba(240,235,225,.92);
+      background:rgba(10,7,4,.65); backdrop-filter:blur(8px);
+      padding:4px 11px; border-radius:100px;
+    }
+
+    /* ── CH4 NATURE ── */
+    .ch-nature { background:var(--bg-alt); padding:110px 56px; transition:background .4s; }
+    .nature-grid { display:grid; grid-template-columns:1fr 1fr; gap:76px; align-items:center; margin-top:58px; }
+
+    .img-duo { position:relative; padding-bottom:48px; }
+    .img-back { width:85%; height:450px; object-fit:cover; object-position:top; border-radius:6px; display:block; }
+    .img-front {
+      width:54%; height:245px; object-fit:cover; object-position:top;
+      border-radius:6px; position:absolute; bottom:0; right:0;
+      box-shadow:var(--sh-lg); border:5px solid var(--bg-alt); display:block;
+      transition:border-color .4s;
+    }
+
+    .entries { display:flex; flex-direction:column; gap:28px; }
+    .entry {
+      padding-left:20px;
+      border-left:2px solid var(--sage-bg);
+      transition:border-color .25s;
+    }
+    .entry:hover { border-color:var(--sage); }
+    .entry h3 {
+      font-family:'Cormorant Garamond',serif;
+      font-size:20px; font-weight:400; color:var(--txt); margin-bottom:8px; transition:color .4s;
+    }
+    .entry p { font-size:13.5px; line-height:1.85; color:var(--txt-3); font-weight:300; transition:color .4s; }
+
+    /* ── CH5 CULTURE ── */
+    .ch-culture { background:var(--bg); padding:110px 56px; transition:background .4s; }
+    .culture-grid { display:grid; grid-template-columns:1fr 1fr; gap:76px; align-items:center; margin-top:58px; }
+    .culture-grid .sec-p { max-width:100%; }
+
+    .val-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:34px; }
+    .val-card {
+      padding:20px 22px; background:var(--bg-card);
+      border-radius:10px; border:1px solid var(--border);
+      box-shadow:var(--sh-sm);
+      transition:transform .3s var(--ease), box-shadow .3s, background .4s, border-color .4s;
+    }
+    .val-card:hover { transform:translateY(-4px); box-shadow:var(--sh-md); }
+    .v-icon { font-size:22px; margin-bottom:9px; display:block; }
+    .v-title { font-family:'Cormorant Garamond',serif; font-size:17px; color:var(--txt); margin-bottom:6px; transition:color .4s; }
+    .v-desc  { font-size:12.5px; line-height:1.7; color:var(--txt-3); font-weight:300; transition:color .4s; }
+
+    .cult-photo { position:relative; }
+    .cult-photo img { width:100%; height:530px; object-fit:cover; object-position:top; border-radius:6px; display:block; }
+    .cult-badge {
+      position:absolute; top:-16px; right:-16px;
+      width:108px; height:108px;
+      background:linear-gradient(135deg,var(--amber) 0%,var(--rose) 100%);
+      border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      font-family:'Cormorant Garamond',serif;
+      font-size:11px; font-style:italic; color:#fff;
+      text-align:center; line-height:1.4; padding:14px;
+      animation:floatY 5s ease-in-out infinite; user-select:none;
+    }
+
+    /* ── SUNSET ── */
+    .sunset { position:relative; height:575px; overflow:hidden; }
+    .sunset img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+    .sunset-ov {
+      position:absolute; inset:0;
+      background:linear-gradient(to top,rgba(8,6,3,.82) 0%,transparent 58%);
+      display:flex; align-items:flex-end; padding:58px;
+    }
+    .sunset-ov h2 {
+      font-family:'Cormorant Garamond',serif;
+      font-size:clamp(22px,3.8vw,44px); font-style:italic; font-weight:300;
+      color:#f7f3ee; line-height:1.2; margin-bottom:14px;
+    }
+    .sunset-ov p { font-size:15px; line-height:1.85; font-weight:300; color:rgba(240,235,225,.65); max-width:480px; }
+
+    /* ── STRIP ── */
+    .strip { background:var(--bg-dark); padding:68px 0; transition:background .4s; }
+    [data-theme="dark"] .strip { background:var(--bg-dark2); }
+    .strip-ttl {
+      font-family:'Cormorant Garamond',serif;
+      font-size:13px; letter-spacing:4px; text-transform:uppercase;
+      color:var(--amber); text-align:center; margin-bottom:28px;
+    }
+    .strip-inner {
+      display:flex; gap:11px; padding:0 56px;
+      overflow-x:auto; scrollbar-width:none; cursor:grab;
+      -webkit-overflow-scrolling:touch;
+    }
+    .strip-inner::-webkit-scrollbar { display:none; }
+    .strip-item { flex:0 0 225px; height:305px; border-radius:6px; overflow:hidden; }
+    .strip-item img { width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .5s var(--ease); pointer-events:none; display:block; }
+    .strip-item:hover img { transform:scale(1.07); }
+
+    /* ── FOOTER ── */
+    footer {
+      background:var(--bg-dark); border-top:1px solid rgba(255,255,255,.05);
+      padding:68px 56px 46px; transition:background .4s;
+    }
+    [data-theme="dark"] footer { background:var(--bg-dark2); }
+    .foot-inner { max-width:940px; margin:0 auto; display:grid; grid-template-columns:1fr auto 1fr; gap:56px; align-items:start; }
+    .foot-brand .ft { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:300; color:var(--txt-inv); margin-bottom:9px; }
+    .foot-brand .ft em { color:var(--rose-l); font-style:italic; }
+    .foot-brand .fs { font-size:12px; color:rgba(240,235,225,.32); font-weight:300; }
+    .foot-div { width:1px; background:rgba(255,255,255,.07); min-height:70px; margin:0 auto; }
+    .foot-nav { text-align:right; }
+    .foot-nav-ttl { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(240,235,225,.22); margin-bottom:13px; }
+    .foot-nav ul { list-style:none; }
+    .foot-nav li + li { margin-top:9px; }
+    .foot-nav a { font-size:12px; color:rgba(240,235,225,.38); text-decoration:none; font-weight:300; transition:color .2s; }
+    .foot-nav a:hover { color:var(--amber-l); }
+    .foot-bot { max-width:940px; margin:44px auto 0; padding-top:20px; border-top:1px solid rgba(255,255,255,.06); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:11px; }
+    .foot-tag { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:rgba(240,235,225,.17); }
+    .foot-legal { display:flex; gap:16px; }
+    .foot-legal a { font-size:10px; color:rgba(240,235,225,.19); text-decoration:none; transition:color .2s; }
+    .foot-legal a:hover { color:rgba(240,235,225,.5); }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1024px){
+      .mosaic-love{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+      .mosaic-nyc {grid-template-columns:1fr 1fr;grid-template-rows:auto}
+      .tall,.tile-span{grid-row:auto}
+    }
+    @media(max-width:900px){
+      nav{padding:0 20px}
+      .nav-mid{display:none}
+      .burger{display:flex}
+      .hero{grid-template-columns:1fr}
+      .hero-l{padding:58px 24px 48px}
+      .hero-l::after{display:none}
+      .hero-r{height:350px;order:-1}
+      .scroll-hint{left:24px}
+      .ch-roots,.ch-love,.ch-nyc,.ch-nature,.ch-culture{padding:70px 22px}
+      .roots-grid,.nyc-top,.nature-grid,.culture-grid{grid-template-columns:1fr;gap:46px}
+      .photo-stack{height:375px}
+      .mosaic-love{grid-template-columns:1fr 1fr;grid-template-rows:215px 215px 215px}
+      .mosaic-nyc {grid-template-columns:1fr 1fr;grid-template-rows:215px 215px 215px}
+      .stats{grid-template-columns:1fr 1fr}
+      .cult-badge{display:none}
+      .val-grid{grid-template-columns:1fr}
+      .sunset-ov{padding:26px}
+      .strip-inner{padding:0 22px}
+      .strip-item{flex:0 0 185px;height:250px}
+      footer{padding:48px 20px 34px}
+      .foot-inner{grid-template-columns:1fr;gap:26px}
+      .foot-div{display:none}
+      .foot-nav,.foot-brand{text-align:left}
+      .foot-bot{flex-direction:column;align-items:flex-start}
+    }
+    @media(max-width:480px){
+      .mosaic-love,.mosaic-nyc{grid-template-columns:1fr;grid-template-rows:auto}
+      .card,.tile{height:240px}
+      .img-front{display:none}
+      .img-back{width:100%;height:290px}
+    }
+    @media print{
+      nav,.scroll-hint,.strip,.stack-badge,.cult-badge,.burger,.theme-btn{display:none!important}
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- NAV -->
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <a href="#" class="nav-logo" aria-label="My World – home">My <span>World</span></a>
+
+  <div class="nav-mid">
+    <ul class="nav-links" role="list">
+      <li><a href="#roots">Roots</a></li>
+      <li><a href="#love">Love</a></li>
+      <li><a href="#nyc">New York</a></li>
+      <li><a href="#nature">Adventures</a></li>
+      <li><a href="#culture">Culture</a></li>
+    </ul>
+  </div>
+
+  <div class="nav-right">
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+    <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="drawer" class="drawer" hidden role="dialog" aria-label="Mobile menu">
+  <a href="#roots">Roots</a>
+  <a href="#love">Love</a>
+  <a href="#nyc">New York</a>
+  <a href="#nature">Adventures</a>
+  <a href="#culture">Culture</a>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-l">
+      <p class="eyebrow" aria-hidden="true">✦ A Personal Journal</p>
+      <h1 class="hero-h1" id="h1">Living<br><em>Colorfully,</em><br><b>Loving</b> Deeply</h1>
+      <p class="hero-sub">From the vibrant streets of Nepal to the towering skyline of New York — a story of roots, adventure, love, and all the beautiful moments in between.</p>
+      <div class="hero-tags" aria-label="Topics">
+        <span class="tag">🇳🇵 Nepal</span>
+        <span class="tag">🗽 New York</span>
+        <span class="tag">💛 Love</span>
+        <span class="tag">🌿 Nature</span>
+        <span class="tag">✨ Life</span>
+      </div>
+      <div class="scroll-hint" aria-hidden="true"><span class="scroll-line"></span>Scroll to explore</div>
+    </div>
+    <div class="hero-r">
+      <!-- IMAGE NOTE: make sure IMG_8090.jpeg is in the SAME folder as index.html -->
+      <img src="IMG_8090.jpeg" alt="Golden sunflower field" loading="eager" fetchpriority="high" width="960" height="1280" />
+    </div>
+  </section>
+
+  <!-- CH1: ROOTS -->
+  <section class="ch-roots" id="roots" aria-labelledby="h-roots">
+    <div class="roots-grid">
+      <div>
+        <p class="lbl" aria-hidden="true">Chapter One</p>
+        <h2 class="sec-h" id="h-roots">Where It All <em>Begins</em></h2>
+        <p class="sec-p reveal">Every story has a beginning, and mine starts in Nepal — a land of breathtaking mountains, ancient festivals, and a warmth that never leaves you no matter how far you roam. Home is not just a place; it's the feeling of colour on your skin, laughter in the grass, and a sky that feels like it belongs only to you.</p>
+        <div class="quote-box reveal d1">
+          <blockquote>"Holi is more than a festival of colours — it is the feeling of pure, uninhibited joy. To lie in the grass of Nepal, covered in blue and green and pink, smiling at the sky… that is what it means to be free."</blockquote>
+          <cite>— A memory carried everywhere</cite>
+        </div>
+      </div>
+      <div class="photo-stack reveal">
+        <img class="stack-main" src="IMG_5749.jpeg" alt="Celebrating Holi in Nepal — covered in vibrant colours" width="800" height="1066" loading="lazy" />
+        <div class="stack-badge" aria-hidden="true">
+          <p><span>होली</span>Holi in<br>Nepal</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CH2: LOVE -->
+  <section class="ch-love" id="love" aria-labelledby="h-love">
+    <div class="love-intro">
+      <p class="lbl" aria-hidden="true">Chapter Two</p>
+      <h2 class="sec-h" id="h-love">Finding <em>Someone</em> to See the World With</h2>
+      <p class="sec-p">Some adventures are best lived side by side. Every lake, every landmark, every quiet moment by the water becomes a memory you'll carry forever when you share it with the right person.</p>
+    </div>
+
+    <div class="mosaic-love" role="list" aria-label="Love chapter photos">
+      <div class="card tall reveal" role="listitem">
+        <img src="IMG_4731.jpeg" alt="Lake George, New York" width="600" height="800" loading="lazy" />
+        <div class="card-ov" aria-hidden="true"><span class="card-cap">Lake George, NY</span></div>
+      </div>
+      <div class="card reveal d1" role="listitem">
+        <img src="IMG_4726.jpeg" alt="Together at the lake" width="600" height="450" loading="lazy" />
+        <div class="card-ov" aria-hidden="true"><span class="card-cap">Side by side</span></div>
+      </div>
+      <div class="card reveal d2" role="listitem">
+        <img src="IMG_2441.jpeg" alt="Cherry blossom season" width="600" height="450" loading="lazy" />
+        <div class="card-ov" aria-hidden="true"><span class="card-cap">Cherry Blossom Season</span></div>
+      </div>
+      <div class="card reveal d1" role="listitem">
+        <img src="IMG_3759.gif" alt="A cozy evening out" width="600" height="450" loading="lazy" />
+        <div class="card-ov" aria-hidden="true"><span class="card-cap">A cozy evening out</span></div>
+      </div>
+      <div class="card reveal d2" role="listitem">
+        <img src="IMG_4474.jpeg" alt="Statue of Liberty" width="600" height="450" loading="lazy" />
+        <div class="card-ov" aria-hidden="true"><span class="card-cap">Statue of Liberty</span></div>
+      </div>
+    </div>
+
+    <div class="love-q reveal">
+      <blockquote>"The best kind of love is the one that takes you places — both on the map and within yourself."</blockquote>
+      <cite>— Written in every shared adventure</cite>
+    </div>
+  </section>
+
+  <!-- CH3: NYC -->
+  <section class="ch-nyc" id="nyc" aria-labelledby="h-nyc">
+    <div class="nyc-top">
+      <div class="reveal">
+        <p class="lbl" aria-hidden="true">Chapter Three</p>
+        <h2 class="sec-h" id="h-nyc">The City That <em>Chose Me</em></h2>
+        <p class="sec-p">New York doesn't just welcome you — it dares you. It dares you to dream bigger, walk faster, look up more often. From the neon pulse of Times Square to the quiet reverence at the Top of the Rock, this city became a second home.</p>
+      </div>
+      <div class="stats" role="list" aria-label="NYC highlights">
+        <div class="stat reveal"    role="listitem"><div class="stat-n">NYC</div><div class="stat-l">Second home</div></div>
+        <div class="stat reveal d1" role="listitem"><div class="stat-n">∞</div><div class="stat-l">Stories every block</div></div>
+        <div class="stat reveal d2" role="listitem"><div class="stat-n" aria-label="Statue of Liberty">🗽</div><div class="stat-l">Lady Liberty visited</div></div>
+        <div class="stat reveal d3" role="listitem"><div class="stat-n" aria-label="Skyline">🌆</div><div class="stat-l">Skyline conquered</div></div>
+      </div>
+    </div>
+
+    <div class="mosaic-nyc" role="list" aria-label="New York photos">
+      <div class="tile tile-span reveal" role="listitem">
+        <img src="IMG_4717.jpeg" alt="Times Square at night" width="800" height="1200" loading="lazy" />
+        <span class="tile-lbl" aria-hidden="true">Times Square</span>
+      </div>
+      <div class="tile reveal d1" role="listitem">
+        <img src="IMG_4656.jpeg" alt="Top of the Rock" width="600" height="450" loading="lazy" />
+        <span class="tile-lbl" aria-hidden="true">Top of the Rock</span>
+      </div>
+      <div class="tile reveal d2" role="listitem">
+        <img src="IMG_4474.jpeg" alt="Statue of Liberty" width="600" height="450" loading="lazy" />
+        <span class="tile-lbl" aria-hidden="true">Liberty Island</span>
+      </div>
+      <div class="tile reveal d1" role="listitem">
+        <img src="IMG_3519.jpeg" alt="Sunflower fields, NY" width="600" height="450" loading="lazy" />
+        <span class="tile-lbl" aria-hidden="true">Sunflower Fields, NY</span>
+      </div>
+      <div class="tile reveal d2" role="listitem">
+        <img src="IMG_2441.jpeg" alt="Cherry blossom season" width="600" height="450" loading="lazy" />
+        <span class="tile-lbl" aria-hidden="true">Cherry Blossom Season</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CH4: NATURE -->
+  <section class="ch-nature" id="nature" aria-labelledby="h-nature">
+    <p class="lbl reveal" aria-hidden="true">Chapter Four</p>
+    <h2 class="sec-h reveal" id="h-nature">Adventures in the <em>Wild</em></h2>
+    <p class="sec-p reveal">Between the city's roar, there are trails to hike, fields to wander, and sunsets that stop your breath mid-sentence. Nature is where you find yourself again.</p>
+
+    <div class="nature-grid">
+      <div class="img-duo reveal">
+        <img class="img-back" src="IMG_7707.jpeg" alt="Hiking at Hudson Highlands State Park" width="800" height="1200" loading="lazy" />
+        <img class="img-front" src="IMG_3519.jpeg" alt="Standing in sunflower fields" width="600" height="450" loading="lazy" />
+      </div>
+      <div class="entries">
+        <div class="entry reveal">
+          <h3>🦅 Hudson Highlands, NY</h3>
+          <p>The trailhead greeted me with a giant eagle and the promise of forest trails. This hike felt like reclaiming something wild — the need to move, breathe, and exist under open sky.</p>
+        </div>
+        <div class="entry reveal d1">
+          <h3>🌻 Sunflower Fields</h3>
+          <p>A white dress, sandals, and a sea of sunflowers stretching to the horizon. They all face the light — and somehow, standing there, so do you.</p>
+        </div>
+        <div class="entry reveal d2">
+          <h3>🌸 Cherry Blossom Season</h3>
+          <p>Spring arrives in pink. Petals drifting down like slow snow, everything soft, fleeting, and breathtaking.</p>
+        </div>
+        <div class="entry reveal d3">
+          <h3>🌊 Lakeside Afternoons</h3>
+          <p>Lake George on a summer afternoon — clear blue water, mountain silhouettes, and nowhere else to be.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CH5: CULTURE -->
+  <section class="ch-culture" id="culture" aria-labelledby="h-culture">
+    <div class="culture-grid">
+      <div>
+        <p class="lbl reveal" aria-hidden="true">Chapter Five</p>
+        <h2 class="sec-h reveal" id="h-culture">Rooted in <em>Culture,</em><br>Open to the World</h2>
+        <p class="sec-p reveal">Wearing a soft pink salwar kameez at a celebration, laughing at Holi with colour across your face — these are the threads that keep you tethered to where you came from. Culture isn't a costume; it's the deepest, most beautiful part of who you are.</p>
+        <div class="val-grid" role="list" aria-label="Values">
+          <div class="val-card reveal"    role="listitem"><span class="v-icon" aria-hidden="true">🎨</span><div class="v-title">Joy &amp; Celebration</div><p class="v-desc">Holi taught me that joy is something you wear on your skin — unapologetically.</p></div>
+          <div class="val-card reveal d1" role="listitem"><span class="v-icon" aria-hidden="true">🌺</span><div class="v-title">Tradition</div><p class="v-desc">Festivals, dress, rituals — the living memory of a people carried forward.</p></div>
+          <div class="val-card reveal d2" role="listitem"><span class="v-icon" aria-hidden="true">✈️</span><div class="v-title">Adventure</div><p class="v-desc">Leave home to understand it. Return to remember what truly matters.</p></div>
+          <div class="val-card reveal d3" role="listitem"><span class="v-icon" aria-hidden="true">💛</span><div class="v-title">Connection</div><p class="v-desc">Every great photo has someone beside you, or cheering you on.</p></div>
+        </div>
+      </div>
+      <div class="cult-photo reveal">
+        <img src="C2E79B65-3C67-4763-81C0-B8DAB4C4CCE3.jpeg" alt="Wearing traditional pink salwar kameez — a proud connection to Nepali culture" width="800" height="1066" loading="lazy" />
+        <div class="cult-badge" aria-hidden="true">Rooted &amp; Blooming</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUNSET -->
+  <section class="sunset" aria-label="Closing thought">
+    <img src="IMG_4474.jpeg" alt="A sunset — two silhouettes, the ocean stretching forward" width="1920" height="1080" loading="lazy" />
+    <div class="sunset-ov">
+      <div>
+        <h2>"Some moments don't need words — just presence."</h2>
+        <p>A sunset, two silhouettes, and the whole ocean stretching forward. This is what it looks like when you're exactly where you're meant to be.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY STRIP -->
+  <section class="strip" aria-label="Photo journey">
+    <p class="strip-ttl" aria-hidden="true">✦ Moments from the journey ✦</p>
+    <div class="strip-inner" role="list" aria-label="Scrollable gallery" tabindex="0">
+      <div class="strip-item" role="listitem"><img src="IMG_5749.jpeg"  alt="Holi in Nepal"           loading="lazy" width="225" height="305" /></div>
+      <div class="strip-item" role="listitem"><img src="IMG_8090.jpeg"  alt="Sunflower field"          loading="lazy" width="225" height="305" /></div>
+      <div class="strip-item" role="listitem"><img src="IMG_4731.jpeg"  alt="Lake George"              loading="lazy" width="225" height="305" /></div>
+      <div class="strip-item" role="listitem"><img src="IMG_4726.jpeg"  alt="Together at the lake"     loading="lazy" width="225" height="305" /></div>
+      <div class="strip-item" role="listitem"><img src="IMG_4656.jpeg"  alt="Top of the Rock"          loading="lazy" width="225" height="305" /></div>
+      <div class="strip-item" role="listitem"><img src="IMG_3759.gif"   alt="Cozy evening"             loading="lazy" width="225" height="305" /></div>
+      <div class="strip-item" role="listitem"><img src="IMG_3519.jpeg"  alt="Sunflower fields"         loading="lazy" width="225" height="305" /></div>
+      <div class="strip-item" role="listitem"><img src="IMG_4717.jpeg"  alt="Times Square"             loading="lazy" width="225" height="305" /></div>
+      <div class="strip-item" role="listitem"><img src="IMG_2441.jpeg"  alt="Cherry blossoms"          loading="lazy" width="225" height="305" /></div>
+      <div class="strip-item" role="listitem"><img src="C2E79B65-3C67-4763-81C0-B8DAB4C4CCE3.jpeg" alt="Traditional dress" loading="lazy" width="225" height="305" /></div>
+      <div class="strip-item" role="listitem"><img src="IMG_4474.jpeg"  alt="Statue of Liberty"        loading="lazy" width="225" height="305" /></div>
+      <div class="strip-item" role="listitem"><img src="IMG_7707.jpeg"  alt="Hudson Highlands"         loading="lazy" width="225" height="305" /></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <p class="ft">My <em>World</em></p>
+      <p class="fs">Nepal → New York → Everywhere in between</p>
+    </div>
+    <div class="foot-div" aria-hidden="true"></div>
+    <nav class="foot-nav" aria-label="Footer navigation">
+      <p class="foot-nav-ttl">Chapters</p>
+      <ul>
+        <li><a href="#roots">Roots — Nepal</a></li>
+        <li><a href="#love">Love &amp; Adventures</a></li>
+        <li><a href="#nyc">New York City</a></li>
+        <li><a href="#nature">Wild Places</a></li>
+        <li><a href="#culture">Culture &amp; Identity</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="foot-bot">
+    <p class="foot-tag">A life lived in colour, love &amp; curiosity ✦</p>
+    <div class="foot-legal">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ── THEME ── */
+  const html = document.documentElement;
+  const btn  = document.getElementById('themeBtn');
+
+  function setTheme(t, animate){
+    html.setAttribute('data-theme', t);
+    btn.textContent = t==='dark' ? '☀️' : '🌙';
+    btn.setAttribute('aria-label', t==='dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    try{ localStorage.setItem('mw-theme', t); }catch(e){}
+    if(animate){
+      btn.classList.remove('pop');
+      void btn.offsetWidth;
+      btn.classList.add('pop');
+    }
+  }
+
+  // Init: saved preference → system preference → light
+  var saved;
+  try{ saved = localStorage.getItem('mw-theme'); }catch(e){}
+  var sys = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  setTheme(saved || sys, false);
+
+  btn.addEventListener('click', function(){
+    setTheme(html.getAttribute('data-theme')==='dark' ? 'light' : 'dark', true);
+  });
+
+  /* ── NAV SCROLL ── */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, {passive:true});
+
+  /* ── MOBILE DRAWER ── */
+  var burger = document.getElementById('burgerBtn');
+  var drawer = document.getElementById('drawer');
+
+  function openDrawer(){
+    drawer.hidden = false;
+    drawer.classList.add('open');
+    burger.setAttribute('aria-expanded','true');
+    burger.setAttribute('aria-label','Close menu');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer(){
+    drawer.hidden = true;
+    drawer.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    burger.setAttribute('aria-label','Open menu');
+    document.body.style.overflow = '';
+  }
+  burger.addEventListener('click', function(){
+    burger.getAttribute('aria-expanded')==='true' ? closeDrawer() : openDrawer();
+  });
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeDrawer);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape' && !drawer.hidden) closeDrawer();
+  });
+
+  /* ── SCROLL REVEAL ── */
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+  if(reduced){
+    reveals.forEach(function(el){ el.style.opacity='1'; el.style.transform='none'; });
+  } else {
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); }
+      });
+    },{threshold:.1, rootMargin:'0px 0px -36px 0px'});
+    reveals.forEach(function(el){ ro.observe(el); });
+  }
+
+  /* ── ACTIVE NAV LINKS ── */
+  var sections = document.querySelectorAll('section[id]');
+  var links    = document.querySelectorAll('.nav-links a');
+  sections.forEach(function(sec){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          links.forEach(function(l){
+            l.classList.toggle('active', l.getAttribute('href')==='#'+sec.id);
+          });
+        }
+      });
+    },{rootMargin:'-35% 0px -60% 0px'}).observe(sec);
+  });
+
+  /* ── DRAG GALLERY ── */
+  var strip = document.querySelector('.strip-inner');
+  if(strip){
+    var down=false, sx, sl;
+    strip.addEventListener('mousedown',function(e){
+      down=true; strip.style.cursor='grabbing';
+      sx=e.pageX-strip.offsetLeft; sl=strip.scrollLeft;
+    });
+    function up(){ down=false; strip.style.cursor='grab'; }
+    strip.addEventListener('mouseleave',up);
+    strip.addEventListener('mouseup',up);
+    strip.addEventListener('mousemove',function(e){
+      if(!down)return; e.preventDefault();
+      strip.scrollLeft = sl - (e.pageX-strip.offsetLeft-sx)*1.5;
+    });
+    strip.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight') strip.scrollLeft+=240;
+      if(e.key==='ArrowLeft')  strip.scrollLeft-=240;
+    });
+  }
+
+})();
+</script>
+</body>
+</html>
